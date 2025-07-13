@@ -1,12 +1,12 @@
 package library;
 
 public class Book {
-    private int id;
+    private Long id;
     private String title;
     private String author;
     private int price;
 
-    public Book(int id, String title, String author, int price) {
+    public Book(Long id, String title, String author, int price) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -22,5 +22,13 @@ public class Book {
 
     public void discount(int percent) {
         this.price = (int)(this.price * (1 - (percent/100.0)));
+    }
+
+    public Long getId() {
+        return this.id;
+    }
+    
+    public String getTitle() {
+        return this.title;
     }
 }
