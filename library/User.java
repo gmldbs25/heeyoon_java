@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class User {
-    private String name;
-    private String email;
-    List<Book> borrowedBooks;
+    protected String name;
+    protected String email;
+    protected List<Book> borrowedBooks;
 
     public User (String name, String email) {
         this.name = name;

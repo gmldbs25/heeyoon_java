@@ -34,6 +34,13 @@ public class Library {
         this.books.removeIf(book -> book.getId().equals(id));
     }
 
+    public Book findBookWithId (Long id) {
+        return books.stream()
+                .filter(book -> book.getId().equals(id))
+                .findFirst()
+                .orElse(null);
+    }
+
     public void printAllBooks() {
         for (Book book : this.books) {
             book.printInfo();
