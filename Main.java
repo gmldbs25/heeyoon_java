@@ -1,5 +1,6 @@
 import library.AdminUser;
 import library.Book;
+import library.LibrarianUser;
 import library.Library;
 
 public class Main {
@@ -25,6 +26,10 @@ public class Main {
         sasha.returnBook(book3, titanLibrary);
         titanLibrary.printAllBooks();
         System.out.println(titanLibrary.hasBook(book3.getId()));
+
+        LibrarianUser jang = new LibrarianUser("jang", "ilovemom@naver.com");
+        jang.findBookTitleById(101L, titanLibrary);
+        jang.printLibraryReport(titanLibrary);
     }
 }
 

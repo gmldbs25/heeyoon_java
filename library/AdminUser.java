@@ -1,6 +1,6 @@
 package library;
 
-public class AdminUser extends User {
+public class AdminUser extends StaffUser {
     private String role;
 
     public AdminUser (String name, String email, String role) {
