@@ -3,7 +3,7 @@ package library;
 import java.util.ArrayList;
 import java.util.List;
 
-public class User {
+public class User implements Borrowable {
     protected String name;
     protected String email;
     protected List<Book> borrowedBooks;
@@ -19,6 +19,7 @@ public class User {
         System.out.println("User email: " + this.email);
     }
 
+    @Override
     public void borrowBook(Book book, Library library) {
         if (borrowedBooks.contains(book)){
             System.out.println("이미 대여 중인 책입니다.");
@@ -36,6 +37,7 @@ public class User {
         }
     }
 
+    @Override
     public void returnBook(Book book, Library library) {
         if (this.borrowedBooks.removeIf(tempbook -> tempbook.getId().equals(book.getId()))) {
             library.addBook(book);

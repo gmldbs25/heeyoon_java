@@ -1,5 +1,6 @@
 import library.AdminUser;
 import library.Book;
+import library.Borrowable;
 import library.LibrarianUser;
 import library.Library;
 
@@ -19,6 +20,8 @@ public class Main {
 
         titanLibrary.printAllBooks();
 
+        Borrowable coni = new AdminUser("coni", "clever@naver.com", "admin");
+        coni.borrowBook(book2, titanLibrary);
         sasha.borrowBook(book3, titanLibrary);
         System.out.println(titanLibrary.hasBook(book3.getId()));
         
@@ -32,4 +35,7 @@ public class Main {
         jang.printLibraryReport(titanLibrary);
     }
 }
+
+
+
 
