@@ -33,6 +33,7 @@ public class Main {
         LibrarianUser jang = new LibrarianUser("jang", "ilovemom@naver.com");
         jang.findBookTitleById(101L, titanLibrary);
         jang.printLibraryReport(titanLibrary);
+        jang.findBookTitleById(999L, titanLibrary);
     }
 }
 

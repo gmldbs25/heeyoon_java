@@ -1,5 +1,8 @@
 package library;
 
+import library.exception.BookNotFoundException;
+
+import java.net.StandardSocketOptions;
 import java.util.List;
 
 public class LibrarianUser extends StaffUser {
@@ -15,11 +18,11 @@ public class LibrarianUser extends StaffUser {
     }
 
     public void findBookTitleById (Long id, Library library) {
-        Book book = library.findBookWithId(id);
-        if (book != null) {
+        try {
+            Book book = library.findBookWithId(id);
             System.out.println(library.getName() + " 도서관에서 id: " + book.getId() + " 의 책을 찾았습니다. 책 제목: " + book.getTitle());
-        } else {
-            System.out.println(library.getName() + " 도서관에서 id: " + id + " 의 책을 찾지 못했습니다");
+        } catch (BookNotFoundException e) {
+            System.out.println(e.getMessage());
         }
     }
 

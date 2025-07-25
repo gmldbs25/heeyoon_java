@@ -1,11 +1,13 @@
 package library;
 
+import library.exception.BookNotFoundException;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Library {
-    private String name;
-    private List<Book> books;
+    private final String name;
+    private final List<Book> books;
 
     public Library(String name) {
         this.name = name;
@@ -24,7 +26,7 @@ public class Library {
         return books.stream()
                 .filter(book -> book.getId().equals(id))
                 .findFirst()
-                .orElse(null);
+                .orElseThrow(() -> new BookNotFoundException(id));
     }
 
     public boolean hasBook(Long id) {
